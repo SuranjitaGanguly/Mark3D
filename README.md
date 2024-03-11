@@ -20,7 +20,7 @@ For making new scans, create a new folder under Mark3D/Data with the SubjectName
 Follow the photogrammetry pipeline after this. 
 Make sure that you follow the folder hierarchy to avoid unintended errors in the paths provided in the automated algorithm. 
 
-## =================Photogrammetry Pipeline=================
+## ==========Photogrammetry Pipeline==========
 1. Set an environment in Python as per the requirements provided
 
 2. In the command prompt, activate the environment using the following : 
@@ -34,6 +34,6 @@ cd /d <path>
 python Final_Photogram.py <path to the bin folder of MeshRoom>  < path to the output folder where you want your 3D model> <Path to videoReconImg_1> <SubjectName>
 python Final_Photogram.py "D:\Mark3D\src\Meshroom_2020_1_1\aliceVision\bin" "D:\Mark3D\Output" "D:\Mark3D\Data\Mark3D_7\VideoReconImg_1" "Mark3D_7"
 
-## =================Running the UI=================
+## =========Running the UI=========
 Visit the following link for more details: 
 
