@@ -6,14 +6,23 @@ The default folder hierarchy is as follows:
 Mark3D
 
 |___ Data
+
      |___<SubjectName>
+     
           | ____ VID.mp4
+          
 |___Output
+
 |___src
+
     |___Meshroom_2020_1_1
+    
     |___128Ch_Montage
+    
     |___Final_Photogram
+    
     |___HM_Utils
+    
     |___UI
 
 
