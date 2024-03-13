@@ -42,6 +42,7 @@ cd /d <path>
 4. Run the photogrammetry pipeline that converts a camera video into a 3D mesh model after taking care of any blurs that may incur during the recording of the video using the following:  
 
 python Final_Photogram.py <path to the bin folder of MeshRoom>  < path to the output folder where you want your 3D model> <Path to videoReconImg_1> <SubjectName>
+example: 
 python Final_Photogram.py "D:\Mark3D\src\Meshroom_2020_1_1\aliceVision\bin" "D:\Mark3D\Output" "D:\Mark3D\Data\Mark3D_7\VideoReconImg_1" "Mark3D_7"
 
 #### =========Running the UI=========
