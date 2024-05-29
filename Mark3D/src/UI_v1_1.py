@@ -216,7 +216,7 @@ class MainWindow(QMainWindow):
         def Create2DLayout(AuxList):
             #Digmontage
             #%%
-            mon1=loadmat('D:/PhD Data/Affect/Montage/128Ch_Montage_IncludingSpacers.mat')
+            mon1=loadmat("C:/Mark3D/src/128Ch_Montage.mat")
             xpos=mon1['Mon']['xposition'][0][0].ravel()
             ypos=mon1['Mon']['yposition'][0][0].ravel()
             zpos=mon1['Mon']['zposition'][0][0].ravel()
