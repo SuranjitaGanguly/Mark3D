@@ -1,7 +1,7 @@
 ## Mark3D
 
 #### ================ Set the folder hierarchy================ 
-The default folder hierarchy is as follows:
+The default folder hierarchy needs to be set as follows for seamless functioning:
 
 Mark3D
 
@@ -26,7 +26,7 @@ Mark3D
     |___UI
 
 
-For making new scans, create a new folder under Mark3D/Data with the SubjectName, and save the video under Mark3D/Data/<SubjectName> as VID.mp4
+For making new scans, create a new folder under Mark3D/Data with the SubjectName as shown in the hierarhy structure above, and save the video under Mark3D/Data/<SubjectName> as VID.mp4
 Follow the photogrammetry pipeline after this. 
 Make sure that you follow the folder hierarchy to avoid unintended errors in the paths provided in the automated algorithm. 
 
