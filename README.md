@@ -48,3 +48,8 @@ python Final_Photogram.py "D:\Mark3D\src\Meshroom_2020_1_1\aliceVision\bin" "D:\
 #### =========Running the UI=========
 Visit the following link for more details: 
 
+
+
+
+#### ========== If you use our tool, cite it! ==============
+Its currently on arxv, under the following DOI: 10.36227/techrxiv.171617225.52618520/v1
