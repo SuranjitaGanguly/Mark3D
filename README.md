@@ -26,8 +26,8 @@ Mark3D
     |___UI
 
 
-For making new scans, create a new folder under Mark3D/Data with the SubjectName as shown in the hierarhy structure above, and save the video under Mark3D/Data/<SubjectName> as VID.mp4
-Follow the photogrammetry pipeline after this. 
+For making new scans, create a new folder under Mark3D/Data with the SubjectName as shown in the hierarchial structure above, and save the video under Mark3D/Data/<SubjectName> as VID.mp4
+Follow the photogrammetry pipeline after this. The generated mesh model will be stored in the Output folder. You can use the path of the generated mesh model and run the GUI to annotate and save electrodes.
 Make sure that you follow the folder hierarchy to avoid unintended errors in the paths provided in the automated algorithm. 
 
 #### ==========Photogrammetry Pipeline==========
