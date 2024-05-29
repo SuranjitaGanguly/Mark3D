@@ -1,0 +1,3 @@
+cd /d D:\Final_Mark3D\Mark3D\src
+
+python Final_Photogram.py "D:\Final_Mark3D\Mark3D\src\Meshroom_2020_1_1\aliceVision\bin" "D:\Final_Mark3D\Mark3D\Output" "D:\Final_Mark3D\Mark3D\Data\Mark3D_7\VideoReconImg_1" "Mark3D_7"
