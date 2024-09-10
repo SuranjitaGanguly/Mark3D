@@ -87,8 +87,9 @@ def VideoToFrames(Sub):
 
     DataPath=dirname+"/Data/"+Sub+"/VID.mp4"
     SilentMkdir(dirname+"/Data/"+Sub+"/VideoReconImg/")
+    '''
     DataPath="../"+"Data/"+Sub+"/VID.mp4"
-    SilentMkdir("../"+"Data/"+Sub+"/VideoReconImg/")
+    SilentMkdir("../"+"Data/"+Sub+"/VideoReconImg/")'''
 
     cam = cv2.VideoCapture(DataPath)
     # frame
@@ -104,7 +105,7 @@ def VideoToFrames(Sub):
 
             name = dirname+"/Data/"+Sub+"/VideoReconImg/" + str(currentframe) + '.jpg'
 
-            name = "../"+"Data/"+Sub+"/VideoReconImg/" + str(currentframe) + '.jpg'
+            #name = "../"+"Data/"+Sub+"/VideoReconImg/" + str(currentframe) + '.jpg'
 
             print ('Creating...' + name)
             cv2.imwrite(name, frame)
@@ -163,7 +164,7 @@ def BlurDetection(Sub):
 
     LoadRoot= dirname+"/Data/"+Sub+"/VideoReconImg/"
 
-    LoadRoot= dirname+"Data/"+Sub+"/VideoReconImg/"
+    
 
     fileList = [f for f in os.listdir(LoadRoot) if f.endswith('.jpg')]
     for j in fileList:
@@ -172,9 +173,7 @@ def BlurDetection(Sub):
         laplacian_var = cv2.Laplacian(img, cv2.CV_64F).var()
         if laplacian_var < 100:
             os.remove(LoadRoot+j)
-            #print("Image blurry")
-            #blur_list.append(j[:-4])
-            #print(laplacian_var)
+            
     print ("Blue Detection DONE!!!!!!!!!!")
     return
             
@@ -222,9 +221,6 @@ def FinalFrames(Sub):
     SilentMkdir(dirname+"/Data/"+Sub+"/VideoReconImg_1/")
     LoadRoot=dirname+"/Data/"+Sub+"/VideoReconImg/"
 
-    SilentMkdir("../"+"Data/"+Sub+"/VideoReconImg_1/")
-    LoadRoot="../"+"Data/"+Sub+"/VideoReconImg/"
-
     fileList = [f for f in os.listdir(LoadRoot) if f.endswith('.jpg')]
     n=len(fileList)
     count=1 #Use n/y, if you want only a specific "y" number of frames to be retained; use the integer 1 if all to be retained
@@ -233,8 +229,6 @@ def FinalFrames(Sub):
         img = cv2.imread(LoadRoot+fileList[i])
 
         name = dirname+"/Data/"+Sub+"/VideoReconImg_1/" + fileList[i]
-
-        name = "../"+"Data/"+Sub+"/VideoReconImg_1/" + fileList[i]
 
         print ('Creating...' + name)
         cv2.imwrite(name, img)
