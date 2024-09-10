@@ -1,0 +1,1 @@
+Sample file of low resolution to help users download faster and get started with the Mark3DGUI irrespective of whether they have tried the Mark3D (the photogrammetry module or not)
