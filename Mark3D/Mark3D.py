@@ -84,13 +84,11 @@ def VideoToFrames(Sub):
 
 
     print ("VIDEO TO FRAMES")
-<<<<<<< HEAD
+
     DataPath=dirname+"/Data/"+Sub+"/VID.mp4"
     SilentMkdir(dirname+"/Data/"+Sub+"/VideoReconImg/")
-=======
     DataPath="../"+"Data/"+Sub+"/VID.mp4"
     SilentMkdir("../"+"Data/"+Sub+"/VideoReconImg/")
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
 
     cam = cv2.VideoCapture(DataPath)
     # frame
@@ -103,11 +101,11 @@ def VideoToFrames(Sub):
       
         if ret:
             # if video is still left continue creating images
-<<<<<<< HEAD
+
             name = dirname+"/Data/"+Sub+"/VideoReconImg/" + str(currentframe) + '.jpg'
-=======
+
             name = "../"+"Data/"+Sub+"/VideoReconImg/" + str(currentframe) + '.jpg'
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
+
             print ('Creating...' + name)
             cv2.imwrite(name, frame)
             count=count+1
@@ -121,10 +119,7 @@ def VideoToFrames(Sub):
     return
 
 def BlurDetection(Sub):
-<<<<<<< HEAD
-    
-=======
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
+
     """
     Detects and removes blurry images from a specified directory based on their Laplacian variance.
 
@@ -165,11 +160,11 @@ def BlurDetection(Sub):
     blur_list=[]
     import cv2
     import numpy as np
-<<<<<<< HEAD
+
     LoadRoot= dirname+"/Data/"+Sub+"/VideoReconImg/"
-=======
+
     LoadRoot= dirname+"Data/"+Sub+"/VideoReconImg/"
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
+
     fileList = [f for f in os.listdir(LoadRoot) if f.endswith('.jpg')]
     for j in fileList:
         print("Reading file =================="+ j)
@@ -223,24 +218,24 @@ def FinalFrames(Sub):
     
    
     print ("Final Frames")
-<<<<<<< HEAD
+
     SilentMkdir(dirname+"/Data/"+Sub+"/VideoReconImg_1/")
     LoadRoot=dirname+"/Data/"+Sub+"/VideoReconImg/"
-=======
+
     SilentMkdir("../"+"Data/"+Sub+"/VideoReconImg_1/")
     LoadRoot="../"+"Data/"+Sub+"/VideoReconImg/"
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
+
     fileList = [f for f in os.listdir(LoadRoot) if f.endswith('.jpg')]
     n=len(fileList)
     count=1 #Use n/y, if you want only a specific "y" number of frames to be retained; use the integer 1 if all to be retained
     for i in np.arange(1,n-1,count):
         print(i)
         img = cv2.imread(LoadRoot+fileList[i])
-<<<<<<< HEAD
+
         name = dirname+"/Data/"+Sub+"/VideoReconImg_1/" + fileList[i]
-=======
+
         name = "../"+"Data/"+Sub+"/VideoReconImg_1/" + fileList[i]
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
+
         print ('Creating...' + name)
         cv2.imwrite(name, img)
     shutil.rmtree(LoadRoot)
