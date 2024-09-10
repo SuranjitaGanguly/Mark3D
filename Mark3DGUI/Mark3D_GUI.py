@@ -38,14 +38,15 @@ import pandas as pd
 import scipy
 from scipy.io import loadmat
 import mne
-
+dirname = os.path.dirname(os.path.abspath(__file__))
+verboseLevel = "\"" + "error" + "\""  
 #%%
 class MainWindow(QMainWindow):
 
     def __init__(self):
         
         def import_file():
-<<<<<<< HEAD
+
             """
             Opens a file dialog to select a 3D mesh file and processes the selected file.
         
@@ -82,9 +83,7 @@ class MainWindow(QMainWindow):
             Returns:
             - None
             """
-            
-=======
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
+
             from PyQt5.QtWidgets import QApplication, QFileDialog
 
             app = QApplication([])
@@ -119,7 +118,7 @@ class MainWindow(QMainWindow):
             app.exec_()
             
         def import_existing_data():
-<<<<<<< HEAD
+
             """
             Imports existing data from saved files and updates the visualization and internal state.
          
@@ -153,9 +152,7 @@ class MainWindow(QMainWindow):
             Returns:
             - None
             """
-            
-=======
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
+  
             #File imports  
             self.ImportStatus=1
             dataframe1 = np.loadtxt("Coordinates_savelfile.txt")
@@ -178,7 +175,7 @@ class MainWindow(QMainWindow):
             return
        
         def view_axis():
-<<<<<<< HEAD
+
             """
             Adds axes to the current plot in `MyPlotter`.
         
@@ -228,12 +225,11 @@ class MainWindow(QMainWindow):
             Returns:
             - None
             """
-            
-=======
+   
             MyPlotter.add_axes()
             
         def view_montage():         
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
+
             dff=['test']
             for i in self.df:
                 dff.append(i[0])
@@ -244,7 +240,7 @@ class MainWindow(QMainWindow):
             self.actorLabels=MyPlotter2.add_point_labels(poly, "My Labels", font_size=10)
             
         def remove_montage():
-<<<<<<< HEAD
+
             """
             Clears the current montage from `MyPlotter2`.
         
@@ -293,12 +289,11 @@ class MainWindow(QMainWindow):
             Returns:
             - None
             """
-        
-=======
+
             MyPlotter2.clear()
             
         def update_montage(): #updates the 2D layout of the montage
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
+
             MyPlotter2.clear()
             
             temp_dff1=['test']
@@ -335,7 +330,7 @@ class MainWindow(QMainWindow):
 
                         
         def save_file():
-<<<<<<< HEAD
+
             """
             Saves the current state of the montage to files.
          
@@ -362,8 +357,7 @@ class MainWindow(QMainWindow):
             Returns:
             - None
             """
-=======
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
+
             temp=HM_Utils.picked_points
             temp=temp.transpose().tolist()
             #if self.ImportStatus==0:
@@ -380,7 +374,7 @@ class MainWindow(QMainWindow):
             
         
         def createArray(point):
-<<<<<<< HEAD
+
             """
             Adds a new point to the `positionArray` and prints the updated array.
         
@@ -405,14 +399,13 @@ class MainWindow(QMainWindow):
             Returns:
             - None
             """
-=======
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
+
             self.positionArray=np.column_stack((self.positionArray, point))
             print(self.positionArray)
             return
 
         def callback(mesh, id):
-<<<<<<< HEAD
+
             """
             Callback function to handle point selection and update visualization.
         
@@ -446,8 +439,7 @@ class MainWindow(QMainWindow):
             - None
             """
             
-=======
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
+
             print("code snippet working!", mesh, "   ", id)
             self.point=self.vertices[id]
             print("vertex is", self.point)
@@ -459,7 +451,7 @@ class MainWindow(QMainWindow):
              
             
         def on_click(state,selected_button):  #The callback is here ; responsible for toggle
-<<<<<<< HEAD
+
             """
             Handles button click events by updating point labels and button statuses.
         
@@ -492,8 +484,7 @@ class MainWindow(QMainWindow):
             Returns:
             - None
             """
-=======
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
+
             print('button click of',selected_button, " ", state)
             MyPlotter.add_point_labels(np.add(self.point, [0.7,0.7,0.7]), [selected_button], point_size=10, font_size=20, text_color='red') 
             #self.buttonArray=self.buttonArray+self.button_select
@@ -524,7 +515,7 @@ class MainWindow(QMainWindow):
             update_montage()
             
         def Create2DLayout(AuxList):
-<<<<<<< HEAD
+
             """
             Creates a 2D layout of EEG sensors based on a montage file.
         
@@ -549,11 +540,8 @@ class MainWindow(QMainWindow):
               is accessible and contains the expected format.
             - The function assumes the use of MNE library for EEG processing.
             """
-=======
-            #Digmontage
-            
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
-            mon1=loadmat('D:/PhD Data/Affect/Montage/128Ch_Montage_IncludingSpacers.mat')
+
+            mon1=loadmat(dirname+'/128Ch_Montage.mat')
             xpos=mon1['Mon']['xposition'][0][0].ravel()
             ypos=mon1['Mon']['yposition'][0][0].ravel()
             zpos=mon1['Mon']['zposition'][0][0].ravel()
@@ -652,7 +640,7 @@ class MainWindow(QMainWindow):
             return pos, names
             
         def sensor_marker():
-<<<<<<< HEAD
+
             """
             Adds a red sphere marker to the plot at the specified point location.
         
@@ -671,13 +659,12 @@ class MainWindow(QMainWindow):
             Returns:
             - None
             """
-=======
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
+
             w = p.add_mesh(pv.Sphere(radius=3, center=point),
                            color='red')
             return
         
-<<<<<<< HEAD
+
 #%%
         """
         Initializes the state for the application, sets up the 3D mesh and 2D layout, and prepares data structures.
@@ -722,14 +709,13 @@ class MainWindow(QMainWindow):
         #-------------------------------------------------------------Imports
         self.ImportStatus=0
         AuxList=['Aux1', 'Aux2', 'Aux3', 'Aux4', 'Aux5', 'Aux6', 'Aux7', 'Aux8', 'Aux9', 'Aux10', 'Aux11', 'Aux12', 'Aux13']
-=======
+
 #%%        
         #-------------------------------------------------------------Imports
         self.ImportStatus=0
         AuxList=['Aux1', 'Aux2', 'Aux3', 'Aux4', 'Aux5', 'Aux6', 'Aux7', 'Aux8', 'Aux9', 'Aux10', 'Aux11', 'Aux12', 'Aux13']
-        #mesh = pv.read(r"D:\Mark3D_ExptData\SubjectsWithRedmiAndEinscan\Mark3D_11\CloudCompare\720_rescaled.stl") #Recon_phoneVid.stl #Somen_rotating.stl
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
-        mesh = pv.read("D:\PhD Data\Affect\Data\Einscan Scan\S14.stl")
+        
+        mesh = pv.read(dirname+"\data\SampleMesh.stl")
         decimated_mesh= mesh.decimate(target_reduction=0.8) #reduce the mesh
         mesh=decimated_mesh
         vertices = mesh.points
@@ -749,7 +735,7 @@ class MainWindow(QMainWindow):
         self.df2=np.asarray(temp1)
         temp=np.zeros(len(temp2));
         self.df2=np.column_stack((self.df2,temp))
-<<<<<<< HEAD
+
         
 #%%      
         """
@@ -793,12 +779,6 @@ class MainWindow(QMainWindow):
         - None
         """
   
-=======
-        #self.df2=np.asarray(FindProjectionOnSphereFromLayoutOnly(self.df2))
-        #df stores the names/labels of the electrodes
-        #df2 stores the default corodinates of the corresponding labels
-#%%        
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
         #-----------------------------------------------Set UI Layout elements      
         super(MainWindow, self).__init__()
         self.setWindowTitle("Mark3D")
@@ -868,7 +848,6 @@ class MainWindow(QMainWindow):
         
         
         
-<<<<<<< HEAD
         """
         Adds elements to the user interface layout and configures visualization components.
         
@@ -907,9 +886,6 @@ class MainWindow(QMainWindow):
         - None
         """
 
-=======
-        
->>>>>>> 7844edb370bb739feb7a723d3fa7254cc4b8d59e
         #------------------------------------------- Add elements to UI layout
         self.BackgroundPlotter = QtInteractor(HMframe)
         MyPlotter=self.BackgroundPlotter  
