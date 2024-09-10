@@ -6,14 +6,18 @@ The toolbox consists of two modules, to be executed in the following order :
 **For validation and working, check out: https://www.techrxiv.org/users/747344/articles/937306-mark3d-a-semi-automated-open-source-toolbox-for-head-surface-reconstruction-and-electrode-position-registration-using-a-smartphone-camera-video**
 
 ### Usage
+***Pre-requisites***
+- Install depenencies with the Requirements.txt provided
+- Download the Meshroom package from the following link: https://github.com/alicevision/meshroom/releases
+  Current support for Meshroom: Only with Windows OS
 **Mark3D Module**
-1. Set an environment in Python as per the requirements provided
-2. In the command prompt, activate the environment using the following : 
+1. Set an environment in Python as per the **requirements** provided
+3. In the command prompt, activate the environment using the following : 
 conda activate <env name>
-3. Change the directory to the path of the Mark3D module (where the Mark3D.py is located):  
+4. Change the directory to the path of the Mark3D module (where the Mark3D.py is located):  
 cd /d <path>
 
-4. Run the photogrammetry pipeline that converts a camera video into a 3D head-surface after taking care of any blurs that may incur during the recording of the video using the following:  
+5. Run the photogrammetry pipeline that converts a camera video into a 3D head-surface after taking care of any blurs that may incur during the recording of the video using the following:  
 **python Mark3D.py <path to the bin folder of aliceVision> <Path where you want your output> <path to Mark3D\Data\"Subject name"\VideoReconImg_1>
 note that the folder "VideoReconImg_1" is created automatically and hence, it should not be renamed in the above arguments.
 
